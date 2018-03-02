@@ -1,8 +1,8 @@
 
 footnote : "Adrian G. Zucco - Center of Translational Neuromedicine - University of Copenhagen - March 2018"
 
-logo : style/ku-small.png
+logo : style/ku-small.png 80%
 
-vertical-center : false
+# vertical-center : false
 
 theme : simple
