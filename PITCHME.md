@@ -1,4 +1,5 @@
 ---?image=style/KU-background.png
+
 ### Data analysis and statistical methods
 ### in R
 #### Adrian Gabriel Zucco 
