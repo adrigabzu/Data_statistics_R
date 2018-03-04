@@ -19,5 +19,8 @@ install.packages("tidyverse")
 
 ---
 
-[R for Data Science](http://r4ds.had.co.nz/)
-[Statistical tests in R](http://r-statistics.co/Statistical-Tests-in-R.html)
+- [R for Data Science](http://r4ds.had.co.nz/)
+- [Statistical tests in R](http://r-statistics.co/Statistical-Tests-in-R.html)
+- [Data analysis for the Life Sciences](http://genomicsclass.github.io/book/)
+
+---
