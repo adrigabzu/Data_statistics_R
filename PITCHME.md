@@ -84,14 +84,26 @@ Output:
 
 
 ---
-### The iris dataset
-
-From the paper:
->Fisher, R.A., 1936. The use of multiple measurements in taxonomic problems. Annals of human genetics, 7(2), pp.179-188.
-It contains measures of width and length of sepals and petals fom three plant species (setosa, virginica, versicolor). It is an example dataset broadly used
+## Type of variables
 
 ---
 
+## Select filter etc
+
+---
+
+## Plot
+
+
+---
+
+## Statistical methods
+
+Cite paper
+
+---
+
+### Useful links
 - [R for Data Science](http://r4ds.had.co.nz/)
 - [Statistical tests in R](http://r-statistics.co/Statistical-Tests-in-R.html)
 - [Data analysis for the Life Sciences](http://genomicsclass.github.io/book/)
