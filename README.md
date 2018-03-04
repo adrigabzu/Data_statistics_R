@@ -1,13 +1,18 @@
 # Data analysis and statistical methods in R
 
-## Pre-requisites
+## Requisites
+
+Download this repository to have access to the data and the tutorial script.
+
+### Programs
 - Install [R](https://mirrors.dotsrc.org/cran/)
 - Install [RStudio](https://www.rstudio.com/products/rstudio/download/#download)
 
-## Libraries
+### Libraries
 Execute inside R:
 ```r
 install.packages("tidyverse")
+install.packages("readxl")
 ```
 
 

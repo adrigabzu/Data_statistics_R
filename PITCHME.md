@@ -52,6 +52,9 @@ data = read_excel("../datasets/Data_Cortex_Nuclear.xls")
 # Execute the variable that stores the data to see its content
 data
 ```
+
++++
+
 Output:
 ```
 # A tibble: 1,080 x 82
