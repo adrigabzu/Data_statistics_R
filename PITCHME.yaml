@@ -6,3 +6,5 @@ logo : style/ku-small.png
 # vertical-center : false
 
 theme : simple
+
+theme-override : style/PITCHME.css
