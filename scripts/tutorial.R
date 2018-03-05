@@ -29,9 +29,9 @@ unique(data$class)
 # Show the results
 ubiquitin_subset
 
-################ PLOT
+################ PLOTS ##############################
 
-# Let´s plot
+# Let's plot
 ggplot(data = ubiquitin_subset) +
   # Select your x, y values by column name and which categories for the colors
   geom_boxplot(mapping = aes(y = Ubiquitin_N, x = Genotype, fill = Genotype)) +

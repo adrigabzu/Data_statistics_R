@@ -192,12 +192,33 @@ ubiquitin_subset
 
 +++
 ### Long vs wide data
-In our case, the data is long format, an example of wide data would be:
+In our case, when we consider more than one column of protein expression the data is in wide format. Long format would mean one row per Mouse and Protein expression value:
 
+``` r
+# All data to long format, for long to wide use spread()
+data_long <- data %>% gather(Protein, Expression, contains("_N"))
+data_long
+```
+```
+# A tibble: 83,160 x 7
+   MouseID Genotype Treatment Behavior class  Protein  Expression
+   <chr>   <chr>    <chr>     <chr>    <chr>  <chr>         <dbl>
+ 1 309_1   Control  Memantine C/S      c-CS-m DYRK1A_N      0.504
+ 2 309_2   Control  Memantine C/S      c-CS-m DYRK1A_N      0.515
+ 3 309_3   Control  Memantine C/S      c-CS-m DYRK1A_N      0.509
+ 4 309_4   Control  Memantine C/S      c-CS-m DYRK1A_N      0.442
+ 5 309_5   Control  Memantine C/S      c-CS-m DYRK1A_N      0.435
+ 6 309_6   Control  Memantine C/S      c-CS-m DYRK1A_N      0.448
+ 7 309_7   Control  Memantine C/S      c-CS-m DYRK1A_N      0.428
+ 8 309_8   Control  Memantine C/S      c-CS-m DYRK1A_N      0.417
+ 9 309_9   Control  Memantine C/S      c-CS-m DYRK1A_N      0.386
+10 309_10  Control  Memantine C/S      c-CS-m DYRK1A_N      0.381
+# ... with 83,150 more rows
+```
 
 <font size="3">
 
-  For more info [check this](https://sejdemyr.github.io/r-tutorials/basics/wide-and-long/)
+  For more info [check this](https://sejdemyr.github.io/r-tutorials/basics/wide-and-long/) and [this](https://rpubs.com/bradleyboehmke/data_wrangling)
 
 </font>
 
@@ -250,6 +271,7 @@ Things to consider:
   - Check it with histograms or qqplots
 - Independent or paired samples?
   - E.g. 2 groups of mice vs 1 group of mice before and after treatment
+  
 </font>
 
 Check this paper:
@@ -261,7 +283,7 @@ Check this paper:
 
 +++?image=figure-markdown_github/stat2.gif
 
-+++?image=figure-markdown_github/stat_flow.gif
++++?image=figure-markdown_github/stat_flow.jpg
 
 ---
 
