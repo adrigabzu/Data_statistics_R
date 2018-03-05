@@ -23,8 +23,11 @@ install.packages("readxl")
 
 Expression levels of 77 proteins measured in the cerebral cortex of 8 classes of control and Down syndrome mice exposed to context fear conditioning, a task used to assess associative learning.
 
-> Higuera, C., Gardiner, K.J. and Cios, K.J., 2015. Self-organizing feature maps identify proteins critical to learning in a mouse model of down syndrome. PloS one, 10(6), p.e0129126.
+<font size="3" >
 
+  Higuera, C., Gardiner, K.J. and Cios, K.J., 2015. Self-organizing feature maps identify proteins critical to learning in a mouse model of down syndrome. PloS one, 10(6), p.e0129126.
+
+</font>
 
 ---
 

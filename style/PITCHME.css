@@ -1,5 +1,6 @@
 .reveal .slides {
     text-align: left;
+    font-size: 85%;
 }
 
 /* .reveal .slides section>* {
@@ -7,4 +8,5 @@
     margin-right: 0;
 } */
 
-body {font-size: 85%;}
+
+.reveal .img { text-align: center; } 
