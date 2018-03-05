@@ -22,10 +22,12 @@ install.packages("readxl")
 ### [Mice Protein Expression Data Set](https://archive.ics.uci.edu/ml/datasets/Mice+Protein+Expression#)
 
 Expression levels of 77 proteins measured in the cerebral cortex of 8 classes of control and Down syndrome mice exposed to context fear conditioning, a task used to assess associative learning.
+<br>
+<font size="3">
 
-<div class=.citation>
   Higuera, C., Gardiner, K.J. and Cios, K.J., 2015. Self-organizing feature maps identify proteins critical to learning in a mouse model of down syndrome. PloS one, 10(6), p.e0129126.
-</div >
+
+</font >
 
 ---
 
@@ -140,10 +142,12 @@ Can be done with native `R` functions but more easily using the `dplyr` library 
 - `mutate()` to change or add columns values
 - `group_by()` and `summarise()` by count, mean, etc.
 - The `%>%` pipe to connect functions
+<br>
+<font size="3">
 
-<div class=citation>
   More info: [R for Data Science](http://r4ds.had.co.nz/)
-</div>
+
+</font>
 +++
 
 #### An example:
@@ -159,7 +163,7 @@ ubiquitin_subset <-
                   contains("Treat") ,
                   class) %>%
   # Keep rows of class c-CS-m and c-SC-m
-  filter(class %in% c("c-CS-m", "c-SC-m")) %>%
+  filter(class %in% c("c-CS-m", "t-CS-m", "c-SC-m", "t-SC-m")) %>%
   # Sort increasing values by default, use desc(column_name) for descending
   arrange(Ubiquitin_N)
 # Show the results
@@ -186,23 +190,86 @@ ubiquitin_subset
     ## # ... with 290 more rows
 
 
++++
+### Long vs wide data
+In our case, the data is long format, an example of wide data would be:
+
+
+<font size="3">
+
+  For more info [check this](https://sejdemyr.github.io/r-tutorials/basics/wide-and-long/)
+
+</font>
+
 ---
 
 ### Let's Plot
 `R` also has its native functions for plotting but we will use ``ggplot``
 
+For a summary of all the functions of ``ggplot2`` check the [ggplot2 cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
+
++++
+
+``` r
+ggplot(data = ubiquitin_subset) +
+  # Select your x, y values by column name and which categories for the colors
+  geom_boxplot(mapping = aes(y = Ubiquitin_N, x = Genotype, fill = Genotype)) +
+  # split the different paired plots and remove the color legends
+  facet_grid( ~ Behavior) + guides(fill = FALSE) +
+  # one of the predefined themes of ggplot2
+  theme_bw()
+```
+
+![Boxplot1](./figure-markdown_github/unnamed-chunk-3-1.png)
+
+
++++
+
+``` r
+ggplot(data = ubiquitin_subset) +
+  # Boxplots per Behavior grouped by genotype
+  geom_boxplot(mapping = aes(y = Ubiquitin_N, x = Behavior, fill = Behavior)) +
+  facet_grid( ~ Genotype) + guides(fill = FALSE) +
+  theme_bw()
+```
+
+![Boxplot2](./figure-markdown_github/unnamed-chunk-4-1.png)
+
 ---
 
-### Statistical methods
+### Choose a statistical test
 
-Cite paper
+Things to consider:
+- How many groups you want to compare?
+- Are all variables the same type? (very important)
+  - Continuous (values in a scale), categorical (classes or ratios).
+  - Survival data (special tests)
+- Parametric (follows a normal distribution) or non-parametric data?
+  - Check it with histograms or qqplots
+- Independent or paired samples?
+  - E.g. 2 groups of mice vs 1 group of mice before and after treatment
+
+  du Prel, J.-B., Röhrig, B., Hommel, G., and Blettner, M. (2010). Choosing Statistical Tests. Dtsch Arztebl Int 107, 343–348.
+
++++
+
+---?image=figure-markdown_github/stat2.gif
+
++++
+
+---?image=figure-markdown_github/stat_flow.gif
+
+---
+
+### Example:
+
 
 ---
 
 #### Useful links
-- [R for Data Science](http://r4ds.had.co.nz/)
+- [R for Data Science](http://r4ds.had.co.nz/) : Main source for this workshop
 - [Statistical tests in R](http://r-statistics.co/Statistical-Tests-in-R.html)
-- [Data analysis for the Life Sciences](http://genomicsclass.github.io/book/)
-- [R course | Page piccinini](https://pagepiccinini.com/r-course/)
+- [Data analysis for the Life Sciences](http://genomicsclass.github.io/book/) : Full course that also includes statistical analysis of genomics.
+- [R course | Page piccinini](https://pagepiccinini.com/r-course/) : Good videos and explanation of anova, linear models and mixed models.
 
 ---

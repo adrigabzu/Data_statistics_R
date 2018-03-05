@@ -59,9 +59,14 @@ You can also embed plots, for example:
 # Store operations in a variable with <- or =
 ubiquitin_subset <-
   # Select the columns to keep, to select everything but a column use -
-  data %>% select(MouseID, Ubiquitin_N, Genotype, ends_with("vior"), contains("Treat") , class) %>%
+  data %>% select(MouseID,
+                  Ubiquitin_N,
+                  Genotype,
+                  ends_with("vior"),
+                  contains("Treat") ,
+                  class) %>%
   # Keep rows of class c-CS-m and c-SC-m
-  filter(class %in% c("c-CS-m","c-SC-m")) %>%
+  filter(class %in% c("c-CS-m", "t-CS-m", "c-SC-m", "t-SC-m")) %>%
   # Sort increasing values by default, use desc(column_name) for descending
   arrange(Ubiquitin_N)
 
@@ -69,19 +74,41 @@ ubiquitin_subset <-
 ubiquitin_subset
 ```
 
-    ## # A tibble: 300 x 6
+    ## # A tibble: 570 x 6
     ##    MouseID Ubiquitin_N Genotype Behavior Treatment class 
     ##    <chr>         <dbl> <chr>    <chr>    <chr>     <chr> 
     ##  1 3415_13       0.751 Control  C/S      Memantine c-CS-m
     ##  2 3415_14       0.812 Control  C/S      Memantine c-CS-m
     ##  3 3415_15       0.857 Control  C/S      Memantine c-CS-m
-    ##  4 309_12        0.912 Control  C/S      Memantine c-CS-m
-    ##  5 309_6         0.920 Control  C/S      Memantine c-CS-m
-    ##  6 309_11        0.940 Control  C/S      Memantine c-CS-m
-    ##  7 309_15        0.942 Control  C/S      Memantine c-CS-m
-    ##  8 309_8         0.944 Control  C/S      Memantine c-CS-m
-    ##  9 309_9         0.947 Control  C/S      Memantine c-CS-m
-    ## 10 309_10        0.970 Control  C/S      Memantine c-CS-m
-    ## # ... with 290 more rows
+    ##  4 3429_4        0.863 Ts65Dn   C/S      Memantine t-CS-m
+    ##  5 3414_3        0.883 Ts65Dn   C/S      Memantine t-CS-m
+    ##  6 3414_6        0.900 Ts65Dn   C/S      Memantine t-CS-m
+    ##  7 309_12        0.912 Control  C/S      Memantine c-CS-m
+    ##  8 3414_9        0.915 Ts65Dn   C/S      Memantine t-CS-m
+    ##  9 3414_2        0.915 Ts65Dn   C/S      Memantine t-CS-m
+    ## 10 3414_8        0.918 Ts65Dn   C/S      Memantine t-CS-m
+    ## # ... with 560 more rows
+
+``` r
+ggplot(data = ubiquitin_subset) +
+  # Select your x, y values by column name and which categories for the colors
+  geom_boxplot(mapping = aes(y = Ubiquitin_N, x = Genotype, fill = Genotype)) +
+  # split the different paired plots and remove the color legends
+  facet_grid( ~ Behavior) + guides(fill = FALSE) +
+  # one of the predefined themes of ggplot2
+  theme_bw()
+```
+
+![](tomd_code_files/figure-markdown_github/unnamed-chunk-3-1.png)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+``` r
+ggplot(data = ubiquitin_subset) +
+  # Boxplots per Behavior grouped by genotype
+  geom_boxplot(mapping = aes(y = Ubiquitin_N, x = Behavior, fill = Behavior)) +
+  facet_grid( ~ Genotype) + guides(fill = FALSE) +
+  theme_bw()
+```
+
+![](tomd_code_files/figure-markdown_github/unnamed-chunk-4-1.png)
