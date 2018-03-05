@@ -1,5 +1,7 @@
 # Data analysis and statistical methods in R
 
+Link to the [slides](https://gitpitch.com/adrigabzu/Data_statistics_R#/)
+
 ## Requisites
 
 Download this repository to have access to the data and the tutorial script.

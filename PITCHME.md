@@ -1,6 +1,4 @@
-
 ---?image=style/KU-background.png
-
 ### Data analysis and statistical methods
 ### in R
 #### Adrian Gabriel Zucco 
@@ -50,7 +48,7 @@ data = read_excel("../datasets/Data_Cortex_Nuclear.xls")
 ## Have a look at the data
 ```r
 # Execute the variable that stores the data to see its content
-data
+print(data)
 ```
 
 +++
@@ -82,10 +80,51 @@ Output:
 #   CaNA_N <dbl>, Genotype <chr>, Treatment <chr>, Behavior <chr>, class <chr>
 ```
 
-
 ---
 ## Type of variables
 
+<table class="tg">
+  <tr>
+    <th class="tg-031e"></th>
+    <th class="tg-031e">Description</th>
+    <th class="tg-031e">Example</th>
+  </tr>
+  <tr>
+    <td class="tg-031e">``int``</td>
+    <td class="tg-031e">integers</td>
+    <td class="tg-031e">1, 2, 3 ,4</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">``dbl``</td>
+    <td class="tg-031e">doubles or real numbers</td>
+    <td class="tg-031e">1.0, 2.3, 3.623, 4.78</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">``chr``</td>
+    <td class="tg-031e">characters or string (text)</td>
+    <td class="tg-031e">"Hello", "wild-type", "1"</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">``dttm``</td>
+    <td class="tg-031e">date-times</td>
+    <td class="tg-031e">"2018-06-09 16:45:40"</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">``lgl``</td>
+    <td class="tg-031e">logical</td>
+    <td class="tg-031e">TRUE / FALSE</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">``fctr``</td>
+    <td class="tg-031e">factors</td>
+    <td class="tg-031e">1, 1, 2, 3, 4, 4 Levels: 1, 2, 3, 4</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">``date``</td>
+    <td class="tg-yw4l">dates</td>
+    <td class="tg-yw4l">"2018-06-09"</td>
+  </tr>
+</table>
 ---
 
 ## Select filter etc

@@ -4,4 +4,6 @@ library(readxl)
 
 # Import the dataset into R
 data = read_excel("../datasets/Data_Cortex_Nuclear.xls")
-data
+
+# Have a look at the data
+print(data)
