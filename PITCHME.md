@@ -134,7 +134,7 @@ Output:
 
 ### Play with your data!
 
-Can be done with native `R` functions but more easily using the `dplyr` library inside `tidyverse`. Most common functions:
+Manipulation of dataframes can be done with native `R` functions but more easily using the `dplyr` library inside `tidyverse`. Common functions:
 
 - `filter()` to keep rows based on conditions
 - `arrange()` to sort values
@@ -174,21 +174,22 @@ ubiquitin_subset
 
 #### Output:
 
-    ## # A tibble: 300 x 6
-    ##    MouseID Ubiquitin_N Genotype Behavior Treatment class 
-    ##    <chr>         <dbl> <chr>    <chr>    <chr>     <chr> 
-    ##  1 3415_13       0.751 Control  C/S      Memantine c-CS-m
-    ##  2 3415_14       0.812 Control  C/S      Memantine c-CS-m
-    ##  3 3415_15       0.857 Control  C/S      Memantine c-CS-m
-    ##  4 309_12        0.912 Control  C/S      Memantine c-CS-m
-    ##  5 309_6         0.920 Control  C/S      Memantine c-CS-m
-    ##  6 309_11        0.940 Control  C/S      Memantine c-CS-m
-    ##  7 309_15        0.942 Control  C/S      Memantine c-CS-m
-    ##  8 309_8         0.944 Control  C/S      Memantine c-CS-m
-    ##  9 309_9         0.947 Control  C/S      Memantine c-CS-m
-    ## 10 309_10        0.970 Control  C/S      Memantine c-CS-m
-    ## # ... with 290 more rows
-
+```
+# A tibble: 300 x 6
+   MouseID Ubiquitin_N Genotype Behavior Treatment class 
+   <chr>         <dbl> <chr>    <chr>    <chr>     <chr> 
+ 1 3415_13       0.751 Control  C/S      Memantine c-CS-m
+ 2 3415_14       0.812 Control  C/S      Memantine c-CS-m
+ 3 3415_15       0.857 Control  C/S      Memantine c-CS-m
+ 4 309_12        0.912 Control  C/S      Memantine c-CS-m
+ 5 309_6         0.920 Control  C/S      Memantine c-CS-m
+ 6 309_11        0.940 Control  C/S      Memantine c-CS-m
+ 7 309_15        0.942 Control  C/S      Memantine c-CS-m
+ 8 309_8         0.944 Control  C/S      Memantine c-CS-m
+ 9 309_9         0.947 Control  C/S      Memantine c-CS-m
+10 309_10        0.970 Control  C/S      Memantine c-CS-m
+# ... with 290 more rows
+```
 
 +++
 ### Long vs wide data
@@ -261,7 +262,6 @@ ggplot(data = ubiquitin_subset) +
 ### Choose a statistical test
 
 Things to consider:
-<font size="3">
 
 - How many groups you want to compare?
 - Are all variables the same type? (very important)
@@ -271,13 +271,12 @@ Things to consider:
   - Check it with histograms or qqplots
 - Independent or paired samples?
   - E.g. 2 groups of mice vs 1 group of mice before and after treatment
-  
-</font>
 
-Check this paper:
-<font size="2">
+<br>
 
-  du Prel, J.-B., Röhrig, B., Hommel, G., and Blettner, M. (2010). Choosing Statistical Tests. Dtsch Arztebl Int 107, 343–348.
+<font size="3">
+
+  > du Prel, J.-B., Röhrig, B., Hommel, G., and Blettner, M. (2010). Choosing Statistical Tests. Dtsch Arztebl Int 107, 343–348.
 
 </font>
 
