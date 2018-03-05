@@ -19,7 +19,7 @@ install.packages("readxl")
 
 ---
 
-#### [Mice Protein Expression Data Set](https://archive.ics.uci.edu/ml/datasets/Mice+Protein+Expression#)
+### [Mice Protein Expression Data Set](https://archive.ics.uci.edu/ml/datasets/Mice+Protein+Expression#)
 
 Expression levels of 77 proteins measured in the cerebral cortex of 8 classes of control and Down syndrome mice exposed to context fear conditioning, a task used to assess associative learning.
 
@@ -132,12 +132,63 @@ Output:
 </font>
 ---
 
-### Select filter etc
+### Play with your data!
+
+Can be done with native `R` functions but more easily using the `dplyr` library inside `tidyverse`. Most common functions:
+
+- `filter()` to keep rows based on conditions
+- `arrange()` to sort values
+- `select()` columns
+- `mutate()` to change or add columns values
+- `group_by()` and `summarise()` by count, mean, etc.
+- The `%>%` pipe to connect functions
+
++++
+
+#### An example:
+
+``` r
+# Store operations in a variable with <- or =
+ubiquitin_subset <-
+  # Select the columns to keep, to select everything but a column use -
+  data %>% select(MouseID,
+                  Ubiquitin_N,
+                  Genotype,
+                  ends_with("vior"),
+                  contains("Treat") ,
+                  class) %>%
+  # Keep rows of class c-CS-m and c-SC-m
+  filter(class %in% c("c-CS-m", "c-SC-m")) %>%
+  # Sort increasing values by default, use desc(column_name) for descending
+  arrange(Ubiquitin_N)
+# Show the results
+ubiquitin_subset
+```
+
++++
+
+#### Output:
+
+    ## # A tibble: 300 x 6
+    ##    MouseID Ubiquitin_N Genotype Behavior Treatment class 
+    ##    <chr>         <dbl> <chr>    <chr>    <chr>     <chr> 
+    ##  1 3415_13       0.751 Control  C/S      Memantine c-CS-m
+    ##  2 3415_14       0.812 Control  C/S      Memantine c-CS-m
+    ##  3 3415_15       0.857 Control  C/S      Memantine c-CS-m
+    ##  4 309_12        0.912 Control  C/S      Memantine c-CS-m
+    ##  5 309_6         0.920 Control  C/S      Memantine c-CS-m
+    ##  6 309_11        0.940 Control  C/S      Memantine c-CS-m
+    ##  7 309_15        0.942 Control  C/S      Memantine c-CS-m
+    ##  8 309_8         0.944 Control  C/S      Memantine c-CS-m
+    ##  9 309_9         0.947 Control  C/S      Memantine c-CS-m
+    ## 10 309_10        0.970 Control  C/S      Memantine c-CS-m
+    ## # ... with 290 more rows
+
 
 ---
 
-### Plot
-
+### Let's Plot
+`R` also has its native functions for plotting but we will use ``ggplot``
 
 ---
 

@@ -55,4 +55,33 @@ You can also embed plots, for example:
 
 ![](tomd_code_files/figure-markdown_github/pressure-1.png)
 
+``` r
+# Store operations in a variable with <- or =
+ubiquitin_subset <-
+  # Select the columns to keep, to select everything but a column use -
+  data %>% select(MouseID, Ubiquitin_N, Genotype, ends_with("vior"), contains("Treat") , class) %>%
+  # Keep rows of class c-CS-m and c-SC-m
+  filter(class %in% c("c-CS-m","c-SC-m")) %>%
+  # Sort increasing values by default, use desc(column_name) for descending
+  arrange(Ubiquitin_N)
+
+# Show the results
+ubiquitin_subset
+```
+
+    ## # A tibble: 300 x 6
+    ##    MouseID Ubiquitin_N Genotype Behavior Treatment class 
+    ##    <chr>         <dbl> <chr>    <chr>    <chr>     <chr> 
+    ##  1 3415_13       0.751 Control  C/S      Memantine c-CS-m
+    ##  2 3415_14       0.812 Control  C/S      Memantine c-CS-m
+    ##  3 3415_15       0.857 Control  C/S      Memantine c-CS-m
+    ##  4 309_12        0.912 Control  C/S      Memantine c-CS-m
+    ##  5 309_6         0.920 Control  C/S      Memantine c-CS-m
+    ##  6 309_11        0.940 Control  C/S      Memantine c-CS-m
+    ##  7 309_15        0.942 Control  C/S      Memantine c-CS-m
+    ##  8 309_8         0.944 Control  C/S      Memantine c-CS-m
+    ##  9 309_9         0.947 Control  C/S      Memantine c-CS-m
+    ## 10 309_10        0.970 Control  C/S      Memantine c-CS-m
+    ## # ... with 290 more rows
+
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

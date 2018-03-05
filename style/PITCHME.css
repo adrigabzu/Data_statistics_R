@@ -10,3 +10,7 @@
 
 
 .reveal .img { text-align: center; } 
+
+.reveal .body {
+    font-size: 0.75em; /* That is your text's default font size. Here i chose 12px */
+}
