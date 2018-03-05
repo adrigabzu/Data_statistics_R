@@ -231,7 +231,7 @@ data_long
 For a summary of all the functions of ``ggplot2`` check the [ggplot2 cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
 
 +++
-
+<!-- .slide: class="center" -->
 ``` r
 ggplot(data = ubiquitin_subset) +
   # Select your x, y values by column name and which categories for the colors
@@ -246,7 +246,7 @@ ggplot(data = ubiquitin_subset) +
 
 
 +++
-
+<!-- .slide: class="center" -->
 ``` r
 ggplot(data = ubiquitin_subset) +
   # Boxplots per Behavior grouped by genotype
@@ -274,11 +274,8 @@ Things to consider:
 
 <br>
 
-<font size="3">
-
   > du Prel, J.-B., Röhrig, B., Hommel, G., and Blettner, M. (2010). Choosing Statistical Tests. Dtsch Arztebl Int 107, 343–348.
 
-</font>
 
 +++?image=figure-markdown_github/stat2.gif
 
