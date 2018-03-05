@@ -14,3 +14,7 @@
 .reveal .body {
     font-size: 0.75em; /* That is your text's default font size. Here i chose 12px */
 }
+
+citation {
+    font-size: 3;
+}
