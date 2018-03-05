@@ -240,6 +240,8 @@ ggplot(data = ubiquitin_subset) +
 ### Choose a statistical test
 
 Things to consider:
+<font size="3">
+
 - How many groups you want to compare?
 - Are all variables the same type? (very important)
   - Continuous (values in a scale), categorical (classes or ratios).
@@ -248,8 +250,14 @@ Things to consider:
   - Check it with histograms or qqplots
 - Independent or paired samples?
   - E.g. 2 groups of mice vs 1 group of mice before and after treatment
+</font>
+
+Check this paper:
+<font size="2">
 
   du Prel, J.-B., Röhrig, B., Hommel, G., and Blettner, M. (2010). Choosing Statistical Tests. Dtsch Arztebl Int 107, 343–348.
+
+</font>
 
 +++?image=figure-markdown_github/stat2.gif
 
