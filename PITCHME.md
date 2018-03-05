@@ -23,9 +23,9 @@ install.packages("readxl")
 
 Expression levels of 77 proteins measured in the cerebral cortex of 8 classes of control and Down syndrome mice exposed to context fear conditioning, a task used to assess associative learning.
 
-<citation>
+<div class=.citation>
   Higuera, C., Gardiner, K.J. and Cios, K.J., 2015. Self-organizing feature maps identify proteins critical to learning in a mouse model of down syndrome. PloS one, 10(6), p.e0129126.
-</citation>
+</div >
 
 ---
 
@@ -141,9 +141,9 @@ Can be done with native `R` functions but more easily using the `dplyr` library 
 - `group_by()` and `summarise()` by count, mean, etc.
 - The `%>%` pipe to connect functions
 
-<citation>
+<div class=citation>
   More info: [R for Data Science](http://r4ds.had.co.nz/)
-</citation>
+</div>
 +++
 
 #### An example:
