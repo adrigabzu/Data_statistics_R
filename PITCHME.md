@@ -6,11 +6,11 @@
 
 ---
 
-## Pre-requisites
+### Pre-requisites
 - Install [R](https://mirrors.dotsrc.org/cran/)
 - Install [RStudio](https://www.rstudio.com/products/rstudio/download/#download)
 
-### Libraries
+#### Libraries
 Execute inside R:
 ```r
 install.packages("tidyverse")
@@ -19,7 +19,7 @@ install.packages("readxl")
 
 ---
 
-### [Mice Protein Expression Data Set](https://archive.ics.uci.edu/ml/datasets/Mice+Protein+Expression#)
+#### [Mice Protein Expression Data Set](https://archive.ics.uci.edu/ml/datasets/Mice+Protein+Expression#)
 
 Expression levels of 77 proteins measured in the cerebral cortex of 8 classes of control and Down syndrome mice exposed to context fear conditioning, a task used to assess associative learning.
 
@@ -28,7 +28,7 @@ Expression levels of 77 proteins measured in the cerebral cortex of 8 classes of
 
 ---
 
-## Import data into R
+### Import data into R
 There are different functions to import data into R according to the format of the file:
 ```r
 # Excel files
@@ -45,7 +45,7 @@ data = read_excel("../datasets/Data_Cortex_Nuclear.xls")
 
 ---
 
-## Have a look at the data
+### Have a look at the data
 ```r
 # Execute the variable that stores the data to see its content
 print(data)
@@ -81,68 +81,70 @@ Output:
 ```
 
 ---
-## Type of variables
 
-<table class="tg">
+### Type of variables
+<font size="5" >
+<table >
   <tr>
-    <th class="tg-031e"></th>
-    <th class="tg-031e">Description</th>
-    <th class="tg-031e">Example</th>
+    <th></th>
+    <th>Description</th>
+    <th>Example</th>
   </tr>
   <tr>
-    <td class="tg-031e">``int``</td>
-    <td class="tg-031e">integers</td>
-    <td class="tg-031e">1, 2, 3 ,4</td>
+    <td>``int``</td>
+    <td>integers</td>
+    <td>1, 2, 3 ,4</td>
   </tr>
   <tr>
-    <td class="tg-031e">``dbl``</td>
-    <td class="tg-031e">doubles or real numbers</td>
-    <td class="tg-031e">1.0, 2.3, 3.623, 4.78</td>
+    <td>``dbl``</td>
+    <td>doubles or real numbers</td>
+    <td>1.0, 2.3, 3.623, 4.78</td>
   </tr>
   <tr>
-    <td class="tg-031e">``chr``</td>
-    <td class="tg-031e">characters or string (text)</td>
-    <td class="tg-031e">"Hello", "wild-type", "1"</td>
+    <td>``chr``</td>
+    <td>characters or string (text)</td>
+    <td>"Hello", "wild-type", "1"</td>
   </tr>
   <tr>
-    <td class="tg-031e">``dttm``</td>
-    <td class="tg-031e">date-times</td>
-    <td class="tg-031e">"2018-06-09 16:45:40"</td>
+    <td>``dttm``</td>
+    <td>date-times</td>
+    <td>"2018-06-09 16:45:40"</td>
   </tr>
   <tr>
-    <td class="tg-031e">``lgl``</td>
-    <td class="tg-031e">logical</td>
-    <td class="tg-031e">TRUE / FALSE</td>
+    <td>``lgl``</td>
+    <td>logical</td>
+    <td>TRUE / FALSE</td>
   </tr>
   <tr>
-    <td class="tg-031e">``fctr``</td>
-    <td class="tg-031e">factors</td>
-    <td class="tg-031e">1, 1, 2, 3, 4, 4 Levels: 1, 2, 3, 4</td>
+    <td>``fctr``</td>
+    <td>factors</td>
+    <td>1, 1, 2, 3, 4, 4 Levels: 1, 2, 3, 4</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">``date``</td>
-    <td class="tg-yw4l">dates</td>
-    <td class="tg-yw4l">"2018-06-09"</td>
+    <td>``date``</td>
+    <td>dates</td>
+    <td>"2018-06-09"</td>
   </tr>
 </table>
+</font>
 ---
 
-## Select filter etc
-
----
-
-## Plot
-
+### Select filter etc
 
 ---
 
-## Statistical methods
+### Plot
+
+
+---
+
+### Statistical methods
 
 Cite paper
 
 ---
 
-### Useful links
+#### Useful links
 - [R for Data Science](http://r4ds.had.co.nz/)
 - [Statistical tests in R](http://r-statistics.co/Statistical-Tests-in-R.html)
 - [Data analysis for the Life Sciences](http://genomicsclass.github.io/book/)
