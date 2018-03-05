@@ -251,13 +251,9 @@ Things to consider:
 
   du Prel, J.-B., Röhrig, B., Hommel, G., and Blettner, M. (2010). Choosing Statistical Tests. Dtsch Arztebl Int 107, 343–348.
 
-+++
++++?image=figure-markdown_github/stat2.gif
 
----?image=figure-markdown_github/stat2.gif
-
-+++
-
----?image=figure-markdown_github/stat_flow.gif
++++?image=figure-markdown_github/stat_flow.gif
 
 ---
 
@@ -266,7 +262,7 @@ Things to consider:
 
 ---
 
-#### Useful links
+### Useful links
 - [R for Data Science](http://r4ds.had.co.nz/) : Main source for this workshop
 - [Statistical tests in R](http://r-statistics.co/Statistical-Tests-in-R.html)
 - [Data analysis for the Life Sciences](http://genomicsclass.github.io/book/) : Full course that also includes statistical analysis of genomics.
