@@ -9,9 +9,7 @@
 ### Pre-requisites
 - Install [R](https://mirrors.dotsrc.org/cran/)
 - Install [RStudio](https://www.rstudio.com/products/rstudio/download/#download)
-
-#### Libraries
-Execute inside R:
+- Install libraries. Inside `R` execute:
 ```r
 install.packages("tidyverse")
 install.packages("readxl")
@@ -349,6 +347,7 @@ t.test(Ubiquitin_N ~ Behavior, data = ubiquitin_subset)
 
 ---
 
+<!-- .slide: class="center" -->
 ## That's it :)
 
 Use this presentation and tutorial as a starting point to learn how to use R in a practical and efficient way. Don't be scared of programming, many developers have worked hard to make it easier for you.
@@ -360,7 +359,7 @@ Use this presentation and tutorial as a starting point to learn how to use R in 
 - [R for Data Science](http://r4ds.had.co.nz/) : Main source for this workshop
 - [Statistical tests in R](http://r-statistics.co/Statistical-Tests-in-R.html) : List and explanation of the functions to perform statistical tests
 - [Data analysis for the Life Sciences](http://genomicsclass.github.io/book/) : Full course that also includes statistical analysis of genomics. (Also available in EdX)
-- [R course | Page piccinini](https://pagepiccinini.com/r-course/) : Good videos and explanation of anova, linear models and mixed models.
-- GOOGLE has te solution to most of your programming problems.
+- [R course | Page piccinini](https://pagepiccinini.com/r-course/) : Good videos and explanations of ANOVA, linear models and mixed models.
+- GOOGLE has the solution to most of your programming problems.
 
 ---
