@@ -53,12 +53,12 @@ ubiquitin_subset
 
 
 ```{r}
+# Select only the treated samples
+treatment_comparison <- ubiquitin_subset %>% filter(Genotype == "Ts65Dn")
+
+# Histograms 
 ggplot(data = ubiquitin_subset) +
-  # Select your x, y values by column name and which categories for the colors
-  geom_boxplot(mapping = aes(y = Ubiquitin_N, x = Genotype, fill = Genotype)) +
-  # split the different paired plots and remove the color legends
-  facet_grid( ~ Behavior) + guides(fill = FALSE) +
-  # one of the predefined themes of ggplot2
+  geom_histogram(mapping = aes(x = Ubiquitin_N, fill = Behavior)) +
   theme_bw()
 ```
 
@@ -66,10 +66,17 @@ ggplot(data = ubiquitin_subset) +
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 ```{r}
+# Qqplot to check normality
 ggplot(data = ubiquitin_subset) +
-  # Boxplots per Behavior grouped by genotype
-  geom_boxplot(mapping = aes(y = Ubiquitin_N, x = Behavior, fill = Behavior)) +
-  facet_grid( ~ Genotype) + guides(fill = FALSE) +
+  stat_qq(mapping = aes(sample = Ubiquitin_N, color = Behavior)) +
+  facet_grid(~ Behavior) + guides(fill = FALSE) +
   theme_bw()
+
 ```
+
+```{r}
+# Proceed with a t-test
+t.test(Ubiquitin_N ~ Behavior, data = ubiquitin_subset)
+```
+
 

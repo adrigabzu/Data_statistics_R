@@ -46,3 +46,23 @@ ggplot(data = ubiquitin_subset) +
   geom_boxplot(mapping = aes(y = Ubiquitin_N, x = Behavior, fill = Behavior)) +
   facet_grid( ~ Genotype) + guides(fill = FALSE) +
   theme_bw()
+
+
+############### Statistical test ###################
+
+# Select only the treated samples
+treatment_comparison <- ubiquitin_subset %>% filter(Genotype == "Ts65Dn")
+
+# Histograms 
+ggplot(data = ubiquitin_subset) +
+  geom_histogram(mapping = aes(x = Ubiquitin_N, fill = Behavior)) +
+  theme_bw()
+
+# Qqplot to check normality
+ggplot(data = ubiquitin_subset) +
+  stat_qq(mapping = aes(sample = Ubiquitin_N, color = Behavior)) +
+  facet_grid(~ Behavior) + guides(fill = FALSE) +
+  theme_bw()
+
+# Proceed with a t-test
+t.test(Ubiquitin_N ~ Behavior, data = ubiquitin_subset)

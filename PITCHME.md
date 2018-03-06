@@ -5,7 +5,7 @@
 ##### Center for Translational Neuromedicine
 <!-- .slide: class="center" -->
 ---
-
+<!-- .slide: class="center" -->
 ### Pre-requisites
 - Install [R](https://mirrors.dotsrc.org/cran/)
 - Install [RStudio](https://www.rstudio.com/products/rstudio/download/#download)
@@ -18,7 +18,7 @@ install.packages("readxl")
 ```
 
 ---
-
+<!-- .slide: class="center" -->
 ### [Mice Protein Expression Data Set](https://archive.ics.uci.edu/ml/datasets/Mice+Protein+Expression#)
 
 Expression levels of 77 proteins measured in the cerebral cortex of 8 classes of control and Down syndrome mice exposed to context fear conditioning, a task used to assess associative learning.
@@ -30,7 +30,7 @@ Expression levels of 77 proteins measured in the cerebral cortex of 8 classes of
 </font >
 
 ---
-
+<!-- .slide: class="center" -->
 ### Import data into R
 There are different functions to import data into R according to the format of the file:
 ```r
@@ -47,7 +47,7 @@ data = read_excel("../datasets/Data_Cortex_Nuclear.xls")
 ```
 
 ---
-
+<!-- .slide: class="center" -->
 ### Have a look at the data
 ```r
 # Execute the variable that stores the data to see its content
@@ -55,7 +55,7 @@ print(data)
 ```
 
 +++
-
+<!-- .slide: class="center" -->
 Output:
 ```
 # A tibble: 1,080 x 82
@@ -84,7 +84,7 @@ Output:
 ```
 
 ---
-
+<!-- .slide: class="center" -->
 ### Type of variables
 <font size="5" >
 <table >
@@ -132,6 +132,7 @@ Output:
 </font>
 ---
 
+<!-- .slide: class="center" -->
 ### Play with your data!
 
 Manipulation of dataframes can be done with native `R` functions but more easily using the `dplyr` library inside `tidyverse`. Common functions:
@@ -279,7 +280,6 @@ Things to consider:
 
   > du Prel, J.-B., Röhrig, B., Hommel, G., and Blettner, M. (2010). Choosing Statistical Tests. Dtsch Arztebl Int 107, 343–348.
 
-
 +++?image=figure-markdown_github/stat2.gif&size=contain
 
 [Source](http://www.efoza.com/post_to-use-which-statistical-test-chart_237239/)
@@ -292,13 +292,64 @@ Things to consider:
 Nam, C.M., and Chung, S.Y. (2012). Statistical methods for medical studies. Journal of the Korean Medical Association 55, 573–581.
 
 </font>
----
-
-### Example:
-
 
 ---
+<!-- .slide: class="center" -->
 
+### Statistical analysis example
+
+``` r
+# Histograms
+ggplot(data = ubiquitin_subset) +
+  geom_histogram(mapping = aes(x = Ubiquitin_N, fill = Behavior)) +
+  theme_bw()
+```
+
+<img src="./figure-markdown_github/hists.png" width="500" align="center" >
+
++++
+<!-- .slide: class="center" -->
+
+``` r
+# Qqplot to check normality
+ggplot(data = ubiquitin_subset) +
+  stat_qq(mapping = aes(sample = Ubiquitin_N, color = Behavior)) +
+  facet_grid(~ Behavior) + guides(fill = FALSE) +
+  theme_bw()
+```
+
+<img src="./figure-markdown_github/qqplots.png" width="500" align="center" >
+
++++
+<!-- .slide: class="center" -->
+<p><span class="menu-title slide-title">Select the treatment rows and perform a t-test:</span></p>
+
+``` r
+# Select only the treated samples
+treatment_comparison <- ubiquitin_subset %>% filter(Genotype == "Ts65Dn")
+
+# Proceed with a t-test
+t.test(Ubiquitin_N ~ Behavior, data = ubiquitin_subset)
+```
+<p><span class="menu-title slide-title">T-test results:</span></p>
+```
+	Welch Two Sample t-test
+
+data:  Ubiquitin_N by Behavior
+t = -24.769, df = 567.56, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.2964864 -0.2529189
+sample estimates:
+mean in group C/S mean in group S/C 
+         1.134776          1.409479 
+```
+
+@[4](All hail the p-val < 0.05)
+
+---
+
+<!-- .slide: class="center" -->
 ### Useful links
 - [R for Data Science](http://r4ds.had.co.nz/) : Main source for this workshop
 - [Statistical tests in R](http://r-statistics.co/Statistical-Tests-in-R.html)

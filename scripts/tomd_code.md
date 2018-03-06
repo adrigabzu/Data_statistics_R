@@ -90,25 +90,44 @@ ubiquitin_subset
     ## # ... with 560 more rows
 
 ``` r
+# Select only the treated samples
+treatment_comparison <- ubiquitin_subset %>% filter(Genotype == "Ts65Dn")
+
+# Histograms 
 ggplot(data = ubiquitin_subset) +
-  # Select your x, y values by column name and which categories for the colors
-  geom_boxplot(mapping = aes(y = Ubiquitin_N, x = Genotype, fill = Genotype)) +
-  # split the different paired plots and remove the color legends
-  facet_grid( ~ Behavior) + guides(fill = FALSE) +
-  # one of the predefined themes of ggplot2
+  geom_histogram(mapping = aes(x = Ubiquitin_N, fill = Behavior)) +
   theme_bw()
 ```
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](tomd_code_files/figure-markdown_github/unnamed-chunk-3-1.png)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 ``` r
+# Qqplot to check normality
 ggplot(data = ubiquitin_subset) +
-  # Boxplots per Behavior grouped by genotype
-  geom_boxplot(mapping = aes(y = Ubiquitin_N, x = Behavior, fill = Behavior)) +
-  facet_grid( ~ Genotype) + guides(fill = FALSE) +
+  stat_qq(mapping = aes(sample = Ubiquitin_N, color = Behavior)) +
+  facet_grid(~ Behavior) + guides(fill = FALSE) +
   theme_bw()
 ```
 
 ![](tomd_code_files/figure-markdown_github/unnamed-chunk-4-1.png)
+
+``` r
+# Proceed with a t-test
+t.test(Ubiquitin_N ~ Behavior, data = ubiquitin_subset)
+```
+
+    ## 
+    ##  Welch Two Sample t-test
+    ## 
+    ## data:  Ubiquitin_N by Behavior
+    ## t = -24.769, df = 567.56, p-value < 2.2e-16
+    ## alternative hypothesis: true difference in means is not equal to 0
+    ## 95 percent confidence interval:
+    ##  -0.2964864 -0.2529189
+    ## sample estimates:
+    ## mean in group C/S mean in group S/C 
+    ##          1.134776          1.409479
