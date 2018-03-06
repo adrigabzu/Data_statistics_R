@@ -3,7 +3,7 @@ footnote : "Adrian G. Zucco - Center of Translational Neuromedicine - University
 
 logo : style/ku-small.png
 
-# vertical-center : false
+vertical-center : false
 
 theme : simple
 
