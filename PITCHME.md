@@ -227,7 +227,7 @@ data_long
 
 ---
 <!-- .slide: class="center" -->
-### Let's Plot
+### Let's Plot @fa[bar-chart] @fa[line-chart] @fa[pie-chart] @fa[area-chart]
 `R` also has its native functions for plotting but we will use ``ggplot``.
 
 For a summary of all the functions of ``ggplot2`` check the [ggplot2 cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
@@ -302,6 +302,9 @@ Nam, C.M., and Chung, S.Y. (2012). Statistical methods for medical studies. Jour
 ### Statistical analysis example
 
 ``` r
+# Select only the treated samples
+treatment_comparison <- ubiquitin_subset %>% filter(Genotype == "Ts65Dn")
+
 # Histograms
 ggplot(data = ubiquitin_subset) +
   geom_histogram(mapping = aes(x = Ubiquitin_N, fill = Behavior)) +
@@ -327,45 +330,56 @@ ggplot(data = ubiquitin_subset) +
 +++
 <!-- .slide: class="center" -->
 
-<p><span class="menu-title slide-title">Select the treatment rows and perform a t-test:</span></p>
+<p><span class="menu-title slide-title">Perform a t-test:</span></p>
 
 ``` r
-# Select only the treated samples
-treatment_comparison <- ubiquitin_subset %>% filter(Genotype == "Ts65Dn")
 
 # Proceed with a t-test
-t.test(Ubiquitin_N ~ Behavior, data = ubiquitin_subset)
+t.test(Ubiquitin_N ~ Behavior, data = treatment_comparison)
 
     ##  Welch Two Sample t-test
     ## 
     ## data:  Ubiquitin_N by Behavior
-    ## t = -24.769, df = 567.56, p-value < 2.2e-16
+    ## t = -22.441, df = 257.57, p-value < 2.2e-16
     ## alternative hypothesis: true difference in means is not equal to 0
     ## 95 percent confidence interval:
-    ##  -0.2964864 -0.2529189
+    ##  -0.3580116 -0.3002484
     ## sample estimates:
     ## mean in group C/S mean in group S/C 
-    ##          1.134776          1.409479
+    ##         1.086861          1.415991
 
 ```
 
-@[10](SIGNIFICANT! O.o)
+@[10](IT IS SIGNIFICANT! O.o)
+
++++
+<!-- .slide: class="center" -->
+<!-- .slide: style="text-align: center;"> -->
+
+<img src="./figure-markdown_github/p_val.png" width="700" align="center" >
+
+<font size="1">
+
+Baker, M. (2016). Statisticians issue warning over misuse of P values. Nature News 531, 151.
+
+</font>
 
 ---
 
 <!-- .slide: class="center" -->
 ## That's it :)
 
-Use this presentation and tutorial as a starting point to learn how to use R in a practical and efficient way. Don't be scared of programming, many developers have worked hard to make it easier for you.
+Use this presentation and tutorial as a starting point to learn how to use R in a practical and efficient way. **Don't be scared of programming, many developers have worked hard to make it easier for you.**
 
 ---
 
 <!-- .slide: class="center" -->
 ### Where I can learn more?
+
 - [R for Data Science](http://r4ds.had.co.nz/) : Main source for this workshop
 - [Statistical tests in R](http://r-statistics.co/Statistical-Tests-in-R.html) : List and explanation of the functions to perform statistical tests
 - [Data analysis for the Life Sciences](http://genomicsclass.github.io/book/) : Full course that also includes statistical analysis of genomics. (Also available in EdX)
 - [R course | Page piccinini](https://pagepiccinini.com/r-course/) : Good videos and explanations of ANOVA, linear models and mixed models.
-- GOOGLE has the solution to most of your programming problems.
+- @fa[google] `Google` has the solution to most of your programming problems.
 
 ---
