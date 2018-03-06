@@ -330,22 +330,21 @@ treatment_comparison <- ubiquitin_subset %>% filter(Genotype == "Ts65Dn")
 
 # Proceed with a t-test
 t.test(Ubiquitin_N ~ Behavior, data = ubiquitin_subset)
-```
-<p><span class="menu-title slide-title">T-test results:</span></p>
-```
-	Welch Two Sample t-test
 
-data:  Ubiquitin_N by Behavior
-t = -24.769, df = 567.56, p-value < 2.2e-16
-alternative hypothesis: true difference in means is not equal to 0
-95 percent confidence interval:
- -0.2964864 -0.2529189
-sample estimates:
-mean in group C/S mean in group S/C 
-         1.134776          1.409479 
+    ##  Welch Two Sample t-test
+    ## 
+    ## data:  Ubiquitin_N by Behavior
+    ## t = -24.769, df = 567.56, p-value < 2.2e-16
+    ## alternative hypothesis: true difference in means is not equal to 0
+    ## 95 percent confidence interval:
+    ##  -0.2964864 -0.2529189
+    ## sample estimates:
+    ## mean in group C/S mean in group S/C 
+    ##          1.134776          1.409479
+    
 ```
 
-@[9](SIGNIFICANT! O.o)
+@[10](SIGNIFICANT! O.o)
 
 ---
 
