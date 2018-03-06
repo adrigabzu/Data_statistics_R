@@ -150,7 +150,7 @@ Manipulation of dataframes can be done with native `R` functions but more easily
 
 </font>
 +++
-
+<!-- .slide: class="center" -->
 #### An example:
 
 ``` r
@@ -172,7 +172,7 @@ ubiquitin_subset
 ```
 
 +++
-
+<!-- .slide: class="center" -->
 #### Output:
 
 ```
@@ -225,9 +225,9 @@ data_long
 </font>
 
 ---
-
+<!-- .slide: class="center" -->
 ### Let's Plot
-`R` also has its native functions for plotting but we will use ``ggplot``
+`R` also has its native functions for plotting but we will use ``ggplot``.
 
 For a summary of all the functions of ``ggplot2`` check the [ggplot2 cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
 
@@ -314,7 +314,7 @@ ggplot(data = ubiquitin_subset) +
 # Qqplot to check normality
 ggplot(data = ubiquitin_subset) +
   stat_qq(mapping = aes(sample = Ubiquitin_N, color = Behavior)) +
-  facet_grid(~ Behavior) + guides(fill = FALSE) +
+  facet_grid(~ Behavior) +
   theme_bw()
 ```
 
@@ -322,6 +322,7 @@ ggplot(data = ubiquitin_subset) +
 
 +++
 <!-- .slide: class="center" -->
+
 <p><span class="menu-title slide-title">Select the treatment rows and perform a t-test:</span></p>
 
 ``` r
@@ -341,18 +342,25 @@ t.test(Ubiquitin_N ~ Behavior, data = ubiquitin_subset)
     ## sample estimates:
     ## mean in group C/S mean in group S/C 
     ##          1.134776          1.409479
-    
+
 ```
 
 @[10](SIGNIFICANT! O.o)
 
 ---
 
+## That's it :)
+
+Use this presentation and tutorial as a starting point to learn how to use R in a practical and efficient way. Don't be scared of programming, many developers have worked hard to make it easier for you.
+
+---
+
 <!-- .slide: class="center" -->
-### Useful links
+### Where I can learn more?
 - [R for Data Science](http://r4ds.had.co.nz/) : Main source for this workshop
-- [Statistical tests in R](http://r-statistics.co/Statistical-Tests-in-R.html)
-- [Data analysis for the Life Sciences](http://genomicsclass.github.io/book/) : Full course that also includes statistical analysis of genomics.
+- [Statistical tests in R](http://r-statistics.co/Statistical-Tests-in-R.html) : List and explanation of the functions to perform statistical tests
+- [Data analysis for the Life Sciences](http://genomicsclass.github.io/book/) : Full course that also includes statistical analysis of genomics. (Also available in EdX)
 - [R course | Page piccinini](https://pagepiccinini.com/r-course/) : Good videos and explanation of anova, linear models and mixed models.
+- GOOGLE has te solution to most of your programming problems.
 
 ---
