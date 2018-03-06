@@ -1,6 +1,19 @@
+##########################################################
+# Introduction to Data Analysis and Statistical tests
+#
+# Adrian Gabriel Zucco 
+# Center for Translational Neuromedicine
+# University of Copenhagen
+##########################################################
+
+# In case you need to install the libraries,
+# remove the # and execute the following:
+# install.packages("tidyverse")
+# install.packages("readxl")
+
+
 library(tidyverse)
 library(readxl)
-
 
 ################# DATA HANDLING #########################
 
@@ -23,8 +36,6 @@ ubiquitin_subset <-
   filter(class %in% c("c-CS-m", "t-CS-m", "c-SC-m", "t-SC-m")) %>%
   # Sort increasing values by default, use desc(column_name) for descending
   arrange(Ubiquitin_N)
-
-unique(data$class)
 
 # Show the results
 ubiquitin_subset
@@ -67,6 +78,6 @@ ggplot(data = treatment_comparison) +
 # Proceed with a t-test
 t.test(Ubiquitin_N ~ Behavior, data = treatment_comparison)
 
-# Access the p-value with
+# Access to the p-value only using $ (suitable for dataframes and lists)
 t_test_result = t.test(Ubiquitin_N ~ Behavior, data = treatment_comparison)
 t_test_result$p.value

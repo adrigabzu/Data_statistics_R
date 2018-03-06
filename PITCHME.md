@@ -164,7 +164,7 @@ ubiquitin_subset <-
                   ends_with("vior"),
                   contains("Treat") ,
                   class) %>%
-  # Keep rows of class c-CS-m and c-SC-m
+  # Keep rows of particular classes
   filter(class %in% c("c-CS-m", "t-CS-m", "c-SC-m", "t-SC-m")) %>%
   # Sort increasing values by default, use desc(column_name) for descending
   arrange(Ubiquitin_N)
@@ -195,7 +195,7 @@ ubiquitin_subset
 
 +++
 ### Long vs wide data
-In our case, when we consider more than one column of protein expression the data is in wide format. Long format would mean one row per Mouse and Protein expression value:
+In this case, when we consider a column per protein expression values, the data is in wide format. Long format would mean one row per Mouse and each protein expression value:
 
 ``` r
 # All data to long format, for long to wide use spread()
@@ -270,12 +270,12 @@ ggplot(data = ubiquitin_subset) +
 
 Things to consider:
 
-- How many groups you want to compare?
-- Are all variables the same type? (very important)
+- How many groups or conditions you want to compare?
+- Are all variables of the same type? (very important)
   - Continuous (values in a scale), categorical (classes or ratios).
-  - Survival data (special tests)
+  - Survival data (a particular case)
 - Parametric (follows a normal distribution) or non-parametric data?
-  - Check it with histograms or qqplots
+  - Check it with histograms, qqplots or statistical tests for normality.
 - Independent or paired samples?
   - E.g. 2 groups of mice vs 1 group of mice before and after treatment
 
@@ -306,7 +306,7 @@ Nam, C.M., and Chung, S.Y. (2012). Statistical methods for medical studies. Jour
 treatment_comparison <- ubiquitin_subset %>% filter(Genotype == "Ts65Dn")
 
 # Histograms
-ggplot(data = ubiquitin_subset) +
+ggplot(data = treatment_comparison) +
   geom_histogram(mapping = aes(x = Ubiquitin_N, fill = Behavior)) +
   theme_bw()
 ```
@@ -319,7 +319,7 @@ ggplot(data = ubiquitin_subset) +
 
 ``` r
 # Qqplot to check normality
-ggplot(data = ubiquitin_subset) +
+ggplot(data = treatment_comparison) +
   stat_qq(mapping = aes(sample = Ubiquitin_N, color = Behavior)) +
   facet_grid(~ Behavior) +
   theme_bw()
@@ -333,7 +333,6 @@ ggplot(data = ubiquitin_subset) +
 <p><span class="menu-title slide-title">Perform a t-test:</span></p>
 
 ``` r
-
 # Proceed with a t-test
 t.test(Ubiquitin_N ~ Behavior, data = treatment_comparison)
 
@@ -350,7 +349,7 @@ t.test(Ubiquitin_N ~ Behavior, data = treatment_comparison)
 
 ```
 
-@[10](IT IS SIGNIFICANT! O.o)
+@[7](IT IS SIGNIFICANT! O.o)
 
 +++
 <!-- .slide: class="center" -->
@@ -374,12 +373,17 @@ Use this presentation and tutorial as a starting point to learn how to use R in 
 ---
 
 <!-- .slide: class="center" -->
-### Where I can learn more?
+### Where can I learn more?
 
 - [R for Data Science](http://r4ds.had.co.nz/) : Main source for this workshop
 - [Statistical tests in R](http://r-statistics.co/Statistical-Tests-in-R.html) : List and explanation of the functions to perform statistical tests
 - [Data analysis for the Life Sciences](http://genomicsclass.github.io/book/) : Full course that also includes statistical analysis of genomics. (Also available in EdX)
 - [R course | Page piccinini](https://pagepiccinini.com/r-course/) : Good videos and explanations of ANOVA, linear models and mixed models.
-- @fa[google] `Google` has the solution to most of your programming problems.
+- `Google` has the solutions to most of your programming problems.
 
 ---
+<!-- .slide: class="center" -->
+<!-- .slide: style="text-align: center;"> -->
+# Thanks for listening =D
+
+![](./figure-markdown_github/R_clippy.png)
