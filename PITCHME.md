@@ -1,15 +1,18 @@
 ---?image=style/KU-background.png&size=contain
-### Data analysis and statistical methods
+### Introduction to Data Analysis and Statistical tests
 ### in R
 #### Adrian Gabriel Zucco 
 ##### Center for Translational Neuromedicine
 <!-- .slide: class="center" -->
+<!-- .slide: style="text-align: center;"> -->
 ---
 <!-- .slide: class="center" -->
 ### Pre-requisites
 - Install [R](https://mirrors.dotsrc.org/cran/)
 - Install [RStudio](https://www.rstudio.com/products/rstudio/download/#download)
 - Install libraries. Inside `R` execute:
+
+
 ```r
 install.packages("tidyverse")
 install.packages("readxl")

@@ -1,4 +1,4 @@
-# Data analysis and statistical methods in R
+# Introduction to Data Analysis and Statistical tests in R
 
 Link to the [slides](https://gitpitch.com/adrigabzu/Data_statistics_R#/)
 
