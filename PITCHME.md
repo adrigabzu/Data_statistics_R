@@ -242,8 +242,7 @@ ggplot(data = ubiquitin_subset) +
   theme_bw()
 ```
 
-![Boxplot1](./figure-markdown_github/unnamed-chunk-3-1.png)
-
+<img src="./figure-markdown_github/unnamed-chunk-3-1.png" width="500" align="center"/>
 
 +++
 <!-- .slide: class="center" -->
@@ -255,7 +254,7 @@ ggplot(data = ubiquitin_subset) +
   theme_bw()
 ```
 
-<img src="./figure-markdown_github/unnamed-chunk-4-1.png" width="500"/>
+<img src="./figure-markdown_github/unnamed-chunk-4-1.png" width="500" align="center"/>
 
 ---
 
@@ -279,7 +278,11 @@ Things to consider:
 
 +++?image=figure-markdown_github/stat2.gif&size=contain
 
+<div class="bottom-aligner">
+
 [Source](http://www.efoza.com/post_to-use-which-statistical-test-chart_237239/)
+
+</div>
 
 +++?image=figure-markdown_github/stat_flow.jpg&size=contain
 
