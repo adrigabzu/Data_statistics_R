@@ -232,6 +232,7 @@ For a summary of all the functions of ``ggplot2`` check the [ggplot2 cheatsheet]
 +++
 
 <!-- .slide: class="center" -->
+<!-- .slide: style="text-align: center;"> -->
 
 ``` r
 ggplot(data = ubiquitin_subset) +
@@ -248,6 +249,7 @@ ggplot(data = ubiquitin_subset) +
 +++
 
 <!-- .slide: class="center" -->
+<!-- .slide: style="text-align: center;"> -->
 
 ``` r
 ggplot(data = ubiquitin_subset) +
@@ -293,7 +295,7 @@ Nam, C.M., and Chung, S.Y. (2012). Statistical methods for medical studies. Jour
 
 ---
 <!-- .slide: class="center" -->
-
+<!-- .slide: style="text-align: center;"> -->
 ### Statistical analysis example
 
 ``` r
@@ -307,6 +309,7 @@ ggplot(data = ubiquitin_subset) +
 
 +++
 <!-- .slide: class="center" -->
+<!-- .slide: style="text-align: center;"> -->
 
 ``` r
 # Qqplot to check normality
