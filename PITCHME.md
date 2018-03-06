@@ -1,4 +1,4 @@
----?image=style/KU-background.png
+---?image=style/KU-background.png&size=contain
 ### Data analysis and statistical methods
 ### in R
 #### Adrian Gabriel Zucco 
@@ -255,7 +255,7 @@ ggplot(data = ubiquitin_subset) +
   theme_bw()
 ```
 
-![Boxplot2](./figure-markdown_github/unnamed-chunk-4-1.png)
+<img src="./figure-markdown_github/unnamed-chunk-4-1.png" width="500"/>
 
 ---
 
@@ -277,10 +277,18 @@ Things to consider:
   > du Prel, J.-B., Röhrig, B., Hommel, G., and Blettner, M. (2010). Choosing Statistical Tests. Dtsch Arztebl Int 107, 343–348.
 
 
-+++?image=figure-markdown_github/stat2.gif
++++?image=figure-markdown_github/stat2.gif&size=contain
 
-+++?image=figure-markdown_github/stat_flow.jpg
+[Source](http://www.efoza.com/post_to-use-which-statistical-test-chart_237239/)
 
++++?image=figure-markdown_github/stat_flow.jpg&size=contain
+
+
+<font size="1">
+
+Nam, C.M., and Chung, S.Y. (2012). Statistical methods for medical studies. Journal of the Korean Medical Association 55, 573–581.
+
+</font>
 ---
 
 ### Example:
