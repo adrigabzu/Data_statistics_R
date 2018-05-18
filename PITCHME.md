@@ -2,7 +2,7 @@
 ### Introduction to Data Analysis and Statistical tests
 ### in R
 #### Adrian Gabriel Zucco 
-##### Center for Translational Neuromedicine
+##### Rigshospitalet - University of Copenhagen
 <!-- .slide: class="center" -->
 <!-- .slide: style="text-align: center;"> -->
 ---
